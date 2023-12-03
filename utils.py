@@ -492,7 +492,7 @@ def DataFile(name, mode='r'):
 
 #______________________________________________________________________________
 # Queues: Stack, FIFOQueue
-
+from queue import PriorityQueue
 class Queue:
     """Queue is an abstract class/interface. There are three types:
         Stack(): A Last In First Out Queue.
@@ -543,7 +543,23 @@ class FIFOQueue(Queue):
             self.start = 0
         return e
 
+class BB(Queue):
 
+    def __init__(self):
+        self.A = PriorityQueue()
+
+    def append(self, item):
+        self.A.put((item.path_cost, item))
+
+    def __len__(self):
+        return self.A.qsize()
+
+    def extend(self, items):
+        for i in items:
+            self.A.put((i.path_cost, i))
+
+    def pop(self):
+        return self.A.get()[1]
 
 ## Fig: The idea is we can define things like Fig[3,10] later.
 ## Alas, it is Fig[3,10] not Fig[3.10], because that would be the same as Fig[3.1]
