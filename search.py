@@ -89,6 +89,8 @@ class Node:
                      problem.path_cost(self.path_cost, self.state, act, next))
                 for (act, next) in problem.successor(self.state)]
 
+    def __gt__(self, other):
+        return (self.path_cost > other.path_cost)
 
 # ______________________________________________________________________________
 ## Uninformed Search algorithms
