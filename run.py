@@ -186,3 +186,56 @@ print(f"El algoritmo tardó {tiempo_total} segundos")
 print()
 print("Ramificación y acotación con subestimación")
 print()
+print("Generados: " + str(search.branch_and_bound_sub_search(ab)[2]))
+print("Visitados: " + str(search.branch_and_bound_sub_search(ab)[1]))
+print("Costo total: " + str(search.branch_and_bound_sub_search(ab)[0].path_cost))
+inicio = timeit.default_timer()
+print(search.branch_and_bound_sub_search(ab)[0].path())
+tiempo_total = timeit.default_timer() - inicio
+print(f"El algoritmo tardó {tiempo_total} segundos")
+# Result:
+# [<Node B>, <Node P>, <Node R>, <Node S>, <Node A>]
+
+print()
+print("Generados: " + str(search.branch_and_bound_sub_search(oe)[2]))
+print("Visitados: " + str(search.branch_and_bound_sub_search(oe)[1]))
+print("Costo total: " + str(search.branch_and_bound_sub_search(oe)[0].path_cost))
+inicio = timeit.default_timer()
+print(search.branch_and_bound_sub_search(oe)[0].path())
+tiempo_total = timeit.default_timer() - inicio
+print(f"El algoritmo tardó {tiempo_total} segundos")
+# Result:
+# [<Node E>, <Node H>, <Node U>, <Node B>, <Node P>, <Node R>, <Node S>, <Node O>]
+
+print()
+print("Generados: " + str(search.branch_and_bound_sub_search(gz)[2]))
+print("Visitados: " + str(search.branch_and_bound_sub_search(gz)[1]))
+print("Costo total: " + str(search.branch_and_bound_sub_search(gz)[0].path_cost))
+inicio = timeit.default_timer()
+print(search.branch_and_bound_sub_search(gz)[0].path())
+tiempo_total = timeit.default_timer() - inicio
+print(f"El algoritmo tardó {tiempo_total} segundos")
+# Result:
+# [<Node Z>, <Node A>, <Node S>, <Node R>, <Node P>, <Node B>, <Node G>]
+
+print()
+print("Generados: " + str(search.branch_and_bound_sub_search(nd)[2]))
+print("Visitados: " + str(search.branch_and_bound_sub_search(nd)[1]))
+print("Costo total: " + str(search.branch_and_bound_sub_search(nd)[0].path_cost))
+inicio = timeit.default_timer()
+print(search.branch_and_bound_sub_search(nd)[0].path())
+tiempo_total = timeit.default_timer() - inicio
+print(f"El algoritmo tardó {tiempo_total} segundos")
+# Result:
+# [<Node D>, <Node C>, <Node P>, <Node B>, <Node U>, <Node V>, <Node I>, <Node N>]
+
+print()
+print("Generados: " + str(search.branch_and_bound_sub_search(mf)[2]))
+print("Visitados: " + str(search.branch_and_bound_sub_search(mf)[1]))
+print("Costo total: " + str(search.branch_and_bound_sub_search(mf)[0].path_cost))
+inicio = timeit.default_timer()
+print(search.branch_and_bound_sub_search(mf)[0].path())
+tiempo_total = timeit.default_timer() - inicio
+print(f"El algoritmo tardó {tiempo_total} segundos")
+# Result:
+# [<Node F>, <Node S>, <Node R>, <Node C>, <Node D>, <Node M>]

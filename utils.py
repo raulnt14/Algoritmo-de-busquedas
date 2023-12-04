@@ -3,7 +3,7 @@
 # Simple Data Structures: infinity, Dict, Struct
 
 infinity = 1.0e400
-
+import math
 
 def Dict(**entries):
     """Create a dict out of the argument=value arguments.
@@ -544,7 +544,7 @@ class FIFOQueue(Queue):
         return e
 
 class BB(Queue):
-
+    "A priority queue that orders elements by path cost"
     def __init__(self):
         self.A = PriorityQueue()
 
@@ -557,6 +557,25 @@ class BB(Queue):
     def extend(self, items):
         for i in items:
             self.A.put((i.path_cost, i))
+
+    def pop(self):
+        return self.A.get()[1]
+
+class BBS(Queue):
+    "A priority queue that orders elements by path cost and heuristic"
+    def __init__(self, problem):
+        self.A = PriorityQueue()
+        self.problem = problem
+
+    def append(self, item):
+        self.A.put((item.path_cost, item))
+
+    def __len__(self):
+        return self.A.qsize()
+
+    def extend(self, items):
+        for i in items:
+            self.A.put((i.path_cost + self.problem.h(i), i))
 
     def pop(self):
         return self.A.get()[1]

@@ -128,6 +128,9 @@ def depth_first_graph_search(problem):
 def branch_and_bound_search(problem):
     return graph_search(problem, BB())
 
+def branch_and_bound_sub_search(problem):
+    return graph_search(problem, BBS(problem))
+
 # _____________________________________________________________________________
 # The remainder of this file implements examples for the search algorithms.
 
